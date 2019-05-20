@@ -2,7 +2,7 @@ Look at examples and tests for usages and how the algorithm works.
 
 Basically I wanted to create something that can pack textures
 extremely quickly. I know the packing algorithm is not very optimal 
-in terms of packing optimally, but the trade off allows us to pack 
+in terms of memory/storage space, but the trade off allows us to pack 
 new textures extremely quickly. 
 
     var atlas = new DTA.Atlas(atlasWidth, atlasHeight, expectedMinLength);
