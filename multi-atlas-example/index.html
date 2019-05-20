@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Dynamic Texture Atlas Example</title>
+    <script src="../dist/dta.js"></script>
+    <script defer src="app.js"></script>
+</head>
+<body>
+
+<div>
+    <input type="text" id="atlas-width"/>
+    <input type="text" id="atlas-height"/>
+    <button id="reset"> Reset </button>
+</div>
+
+<div>
+    <h1> Added Rect Values </h1>
+    <label> Min Rect Height </label>
+    <input id="min-rect-height" type="text"/>
+
+    <label> Max Rect Height </label>
+    <input id="max-rect-height" type="text"/>
+
+    <label> Min Rect Width </label>
+    <input id="min-rect-width" type="text"/>
+
+    <label> Max Rect Width </label>
+    <input id="max-rect-width" type="text"/>
+</div>
+
+<div>
+    <button id="add-rect"> Add Rect </button>
+</div>
+
+<div id="canvases">
+</div>
+
+</body>
+</html>
