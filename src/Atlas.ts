@@ -6,7 +6,7 @@ type Rect = {
 }
 
 export default class Atlas {
-    private mappedRects: {[id: string]: Rect } = {};
+    public mappedRects: {[id: string]: Rect } = {};
     private maxAtlasWidth: number;
     private maxAtlasHeight: number;
     private expectedMinTextureLength: number;

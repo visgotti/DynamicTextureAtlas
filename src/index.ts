@@ -1,3 +1,4 @@
 import Atlas from './Atlas';
 import MultiAtlas from './MultiAtlas';
-export { Atlas, MultiAtlas }
+import RenderedAtlas from './RenderedAtlas';
+export { Atlas, MultiAtlas, RenderedAtlas }
