@@ -7,8 +7,8 @@ export default class RenderedAtlas extends MultiAtlas {
     private renderer;
     private atlasRenderTextures;
     private mappedTextures;
-    private mappedSprites;
     constructor(renderer: any, maxAtlasWidth: any, maxAtlasHeight: any, expectedMinTextureLength: any);
+    addTexture(id: any, texture: any): PIXI.Texture;
     /**
      * Initialized the given sprite into an open atlas position and then renders the sprites current
      * texture to a RenderTexture and returns a new texture from the render texture.
@@ -16,7 +16,5 @@ export default class RenderedAtlas extends MultiAtlas {
      * @param sprite - sprite that has a texture we want to merge into our atlas
      * @param deleteSprite - if we want to delete the sprite and its textures after
      */
-    addSprite(id: any, sprite: PIXI.Sprite): PIXI.Texture;
-    removeSprite(id: any, sprite: any): void;
-    updateSpriteTextures(atlasIndex: any): void;
+    addSprite(id: any, sprite: PIXI.Sprite, deleteSprite?: boolean): PIXI.Texture;
 }

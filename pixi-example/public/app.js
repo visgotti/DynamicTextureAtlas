@@ -42,9 +42,10 @@ function onLoaded(loader, resources) {
 
         let i = 0;
         let interval = setInterval(() => {
-                const newSprite = new PIXI.Sprite(resources[`sprites/bunny_${i}.png`].texture);
+                const sprite = new PIXI.Sprite(resources[`sprites/bunny_${i}.png`].texture);
                 const timeStart = Date.now();
-                atlas.addSprite(i, newSprite);
+                const texture = atlas.addSprite(i, sprite, true);
+                const newSprite = new PIXI.Sprite(texture);
                 console.log('rerender time', Date.now() - timeStart);
                 newSprite.x = drawX;
                 newSprite.y = drawY;
