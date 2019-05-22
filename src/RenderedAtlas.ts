@@ -6,11 +6,16 @@ import { MultiAtlas } from './';
 export default class RenderedAtlas extends MultiAtlas {
     private renderer: PIXI.WebGLRenderer | PIXI.CanvasRenderer;
     private atlasRenderTextures: {[atlasIndex: number]: PIXI.RenderTexture } = {};
-    private mappedTextures: {[ textureId: string]: PIXI.Texture };
+    private mappedTextures: {[ textureId: string]: PIXI.Texture } = {};
     constructor(renderer, maxAtlasWidth, maxAtlasHeight, expectedMinTextureLength)
     {
         super(maxAtlasWidth, maxAtlasHeight, expectedMinTextureLength);
         this.renderer = renderer;
+    }
+
+    public addTexture(id, texture) {
+        const sprite = new PIXI.Sprite();
+        return this.addSprite(id, sprite, true);
     }
 
     /**
