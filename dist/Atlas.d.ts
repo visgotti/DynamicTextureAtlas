@@ -1,5 +1,13 @@
+declare type Rect = {
+    x: number;
+    y: number;
+    width: number;
+    height: number;
+};
 export default class Atlas {
-    private mappedRects;
+    mappedRects: {
+        [id: string]: Rect;
+    };
     private maxAtlasWidth;
     private maxAtlasHeight;
     private expectedMinTextureLength;
@@ -36,3 +44,4 @@ export default class Atlas {
      */
     private getOpenRect;
 }
+export {};

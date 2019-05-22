@@ -11,6 +11,10 @@ or
 
     var multiAtlas = new DTA.MultiAtlas(atlasWidth, atlasHeight, expectedMinLength);
 
+
+Brief usage - 
+
+
     var rect = atlas.addRect(id, w, h)
     // rect is either false if there was no room
     // or has the x, y, width, and height of the rect
@@ -27,3 +31,16 @@ performance boost when rendering sprites to a PIXI.RenderTexture,
 since all it will need to do is draw
 the new texture at the given position on the RenderTexture
 while the rest of the RenderTexture remains exactly the same.
+
+
+Added RenderedAtlas 
+
+Keeps track of new textures mapped to the atlas
+
+Usage - 
+    
+    const renderer = PIXI.autoDetectRenderer({});
+    const atlas = new RenderedAtlas(renderer, atlasWidth, atlasHeight, expectedMinLength)
+    const sprite = new PIXI.Sprite(texture);
+    const mappedTexture = atlas.addSprite(textureId, sprite);
+    sprite.texture = mappedTexture;

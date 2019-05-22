@@ -7,8 +7,8 @@
     "declaration": true,
     "noImplicitAny": false,
     "sourceMap": true,
-    "types": ["node", "mocha"],
-    "moduleResolution": "node",
+    "types": ["node", "mocha", "pixi.js"],
+    "moduleResolution": "node"
   },
   "include": [
     "src/**/*.ts"

@@ -15,9 +15,9 @@ export default class MultiAtlas {
     private availableAtlasses: Array<Atlas>;
     private atlasses: Array<Atlas>;
     private mappedRects: { [id: string]: { atlasIndex: number, rect: Rect } } = {};
-    private maxAtlasWidth: number;
-    private maxAtlasHeight: number;
     private expectedMinTextureLength: number;
+    public maxAtlasWidth: number;
+    public maxAtlasHeight: number;
     constructor(maxAtlasWidth, maxAtlasHeight, expectedMinTextureLength)
     {
         this.maxAtlasWidth = maxAtlasWidth;
@@ -26,6 +26,10 @@ export default class MultiAtlas {
         this.atlasses = [new Atlas(maxAtlasWidth, maxAtlasHeight, expectedMinTextureLength)];
         this.availableAtlasses = [this.atlasses[0]];
         const mappedRects = {};
+    }
+
+    public getMappedRects(atlasIndex) {
+        return this.atlasses[atlasIndex].mappedRects;
     }
 
     public addRect(id, width, height) {
