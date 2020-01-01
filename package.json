@@ -1,7 +1,7 @@
 {
-  "name": "dynamictextureatlas",
-  "version": "0.0.1",
-  "description": "",
+  "name": "dynamic-texture-atlas",
+  "version": "0.0.2",
+  "description": "Library for caching textures on on growing atlas",
   "main": "index.js",
   "scripts": {
     "build": "webpack --config ./webpack.config.js",

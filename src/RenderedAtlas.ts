@@ -18,6 +18,10 @@ export default class RenderedAtlas extends MultiAtlas {
         return this.addSprite(id, sprite, true);
     }
 
+    public getTexture(id) {
+        return this.mappedTextures[id];
+    }
+
     /**
      * Initialized the given sprite into an open atlas position and then renders the sprites current
      * texture to a RenderTexture and returns a new texture from the render texture.
@@ -28,7 +32,7 @@ export default class RenderedAtlas extends MultiAtlas {
     public addSprite (id, sprite: PIXI.Sprite, deleteSprite=false) : PIXI.Texture {
         if(this.mappedTextures[id]) {
             if(deleteSprite) {
-                sprite.destroy({children: true, texture: true, baseTexture: true});
+                sprite.destroy({children: true, texture: true, baseTexture: false});
             }
             return this.mappedTextures[id];
         }
@@ -47,7 +51,6 @@ export default class RenderedAtlas extends MultiAtlas {
 
         // render sprite to render texture
         this.renderer.render(sprite, renderTexture, false);
-
         // make a reference to the new texture using render texture as base.
         const texture = new PIXI.Texture(
             renderTexture.baseTexture,
@@ -57,7 +60,7 @@ export default class RenderedAtlas extends MultiAtlas {
         this.mappedTextures[id] = texture;
 
         if(deleteSprite) {
-            sprite.destroy({children: true, texture: true, baseTexture: true});
+            sprite.destroy({children: true, texture: true, baseTexture: false});
         }
         return texture;
     }

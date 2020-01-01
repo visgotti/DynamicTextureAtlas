@@ -9,6 +9,7 @@ export default class RenderedAtlas extends MultiAtlas {
     private mappedTextures;
     constructor(renderer: any, maxAtlasWidth: any, maxAtlasHeight: any, expectedMinTextureLength: any);
     addTexture(id: any, texture: any): PIXI.Texture;
+    getTexture(id: any): PIXI.Texture;
     /**
      * Initialized the given sprite into an open atlas position and then renders the sprites current
      * texture to a RenderTexture and returns a new texture from the render texture.
